@@ -1,19 +1,17 @@
-#Python decorator is a function that takes in a function and returns it by add some 
-# functionality
-def make_pretty(func):
-    #define the inner function
-    def inner():
-        #add some additional behavior to decorated function
-        print("I got decorated")
+#DEcorating functions with parameters
+def smart_divide(func):
+    def inner(a,b):
+        print("I am going to divide", a, "and", b)
+        if b == 0:
+            print("Cannot divide")
+            return
+        return func(a,b)
+    return inner
 
-        #call the original function
-        func()
-    #return the inner function
-    return inner()
+@smart_divide
+def divide(a,b):
+    print(a/b)
 
-#define the ordinary function
-@make_pretty
-def ordinary():
-    print("I am ordinary")
+divide(2,5)
 
-ordinary()
+divide(2, 0)
