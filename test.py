@@ -1,9 +1,11 @@
-#Python iterators -- __iter__() and __next__()
-my_list = [4,7,0]
+# create a list of integers
+my_list = [1, 2, 3, 4, 5]
 
-#create an iterator from the list
+# create an iterator from the list
 iterator = iter(my_list)
 
-print(next(iterator))
-print(next(iterator))
-print(next(iterator))
+# iterate through the elements of the iterator
+for element in iterator:
+
+    # Print each element
+    print(element)
