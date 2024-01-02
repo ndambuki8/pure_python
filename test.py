@@ -1,21 +1,9 @@
-#Chaining decorators in python
-def star(func):
-    def inner(*args, **kwargs):
-        print("*" * 15)
-        func(*args, **kwargs)
-        print("*" * 15)
-    return inner
+#Python iterators -- __iter__() and __next__()
+my_list = [4,7,0]
 
-def percent(func):
-    def inner(*args, **kwargs):
-        print("#" * 15)
-        func(*args, **kwargs)
-        print("#" * 15)
-    return inner
+#create an iterator from the list
+iterator = iter(my_list)
 
-@percent
-@star
-def printer(msg):
-    print(msg)
-
-printer("Hello")
+print(next(iterator))
+print(next(iterator))
+print(next(iterator))
