@@ -1,24 +1,9 @@
-#Building custom Iterators
+#Python infinite iterators
+from itertools import count
 
-class PowTwo:
-    """Class to implement an iterator 
-    of powers of two"""
+#create an infinite iterator that starts at 1 and increments by 1 each time
+infinite_iterator = count(1)
 
-    def __init__(self, max=0):
-        self.max = max
-    
-    def __iter__(self):
-        self.n=0
-        return self
-    
-    def __next__(self):
-        if self.n <= self.max:
-            result = 2 ** self.n
-            self.n += 1
-            return result
-        else:
-            raise StopIteration
-        
-#using for loop to iterate over iterator class\
-for i in PowTwo(3):
-    print(i)
+#print the first 5 elements of the infinite iterator
+for i in range(5):
+    print(next(infinite_iterator))
