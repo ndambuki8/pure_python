@@ -1,11 +1,22 @@
-# create a list of integers
-my_list = [1, 2, 3, 4, 5]
+#Building custom Iterators
 
-# create an iterator from the list
-iterator = iter(my_list)
+class PowTwo:
+    """Class to implement an iterator 
+    of powers of two"""
 
-# iterate through the elements of the iterator
-for element in iterator:
-
-    # Print each element
-    print(element)
+    def __init__(self, max=0):
+        self.max = max
+    
+    def __iter__(self):
+        self.n=0
+        return self
+    
+    def __next__(self):
+        if self.n <= self.max:
+            result = 2 ** self.n
+            self.n += 1
+            return result
+        else:
+            raise StopIteration
+        
+#create
