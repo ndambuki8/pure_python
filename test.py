@@ -19,15 +19,6 @@ class PowTwo:
         else:
             raise StopIteration
         
-#create an object 
-numbers = PowTwo(3)
-
-#create an iterable from the object
-i = iter(numbers)
-
-#using next to get thenext iterator element
-print(next(i))
-print(next(i))
-print(next(i))
-print(next(i))
-print(next(i))
+#using for loop to iterate over iterator class\
+for i in PowTwo(3):
+    print(i)
