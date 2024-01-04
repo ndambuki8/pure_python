@@ -1,9 +1,16 @@
-#Python infinite iterators
-from itertools import count
+#Python generators
+def my_generator(n):
 
-#create an infinite iterator that starts at 1 and increments by 1 each time
-infinite_iterator = count(1)
+    #initialize counter
+    value = 0
 
-#print the first 5 elements of the infinite iterator
-for i in range(5):
-    print(next(infinite_iterator))
+    #loop until counter is less than n
+    while value < n:
+
+        yield value
+
+        value += 1
+
+    
+for value in my_generator(3):
+    print(value)
