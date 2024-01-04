@@ -12,5 +12,10 @@ def my_generator(n):
         value += 1
 
     
-for value in my_generator(3):
-    print(value)
+# for value in my_generator(3):
+#     print(value)
+
+generator = my_generator(3)
+print(next(generator))
+print(next(generator))
+print(next(generator))
