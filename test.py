@@ -1,8 +1,7 @@
 #Python generators expression - a concise way to create a generator object
 
-#create the generator object
-squares_generator = (i * i for i in range(5))
-
-#iterate over the generator and print the values
-for i in squares_generator:
-    print(i)
+def PowTwo(max=0):
+    n = 0
+    while n < max:
+        yield 2 ** n
+        n += 1
