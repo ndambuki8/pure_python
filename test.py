@@ -1,13 +1,8 @@
-#Python generators expression - a concise way to create a generator object
+#Python closures
+def greet(name):
+    def display_name():
+        print("Hi", name)
 
-def fibonacci_numbers(nums):
-    x, y = 0,1
-    for _ in range(nums):
-        x,y= y, x+y
-        yield x
+    display_name()
 
-def square(nums):
-    for num in nums:
-        yield num ** 2
-
-print(sum(square(fibonacci_numbers(3))))
+greet("John")
