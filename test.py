@@ -1,8 +1,8 @@
 #Python closures
 def greet(name):
-    def display_name():
-        print("Hi", name)
+    name = 'John'
+    return lambda : "Hi " + name
 
-    display_name()
+message = greet()
 
-greet("John")
+print(message())
