@@ -1,18 +1,18 @@
 #Python closures
-def calculate():
-    num = 1
-    def inner_func():
-        nonlocal num
-        num += 2
-        return num
-    return inner_func
+def make_multiplier_of(n):
+    def multiplier(x):
+        return x * n
+    return multiplier
 
-#call the outer function
-odd = calculate()
-print(odd())
-print(odd())
-print(odd())
 
-#call outer functioo again
-odd2 = calculate()
-print(odd2())
+#multiplier of 3
+times3 = make_multiplier_of(3)
+
+#multiplier of 5
+times5 = make_multiplier_of(5)
+
+print(times3(9))
+
+print(times3(3))
+
+print(times5(times3(2)))
