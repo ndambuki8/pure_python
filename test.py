@@ -1,18 +1,7 @@
-#Python closures
-def make_multiplier_of(n):
-    def multiplier(x):
-        return x * n
-    return multiplier
+#Python @property decorators
+class Celsius:
+    def __init__(self, temperature = 0):
+        self.temperature = temperature
 
-
-#multiplier of 3
-times3 = make_multiplier_of(3)
-
-#multiplier of 5
-times5 = make_multiplier_of(5)
-
-print(times3(9))
-
-print(times3(3))
-
-print(times5(times3(2)))
+    def to_fahrenheit(self):
+        return (self.temperature * 1.8) + 32
