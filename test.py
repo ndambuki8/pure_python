@@ -17,3 +17,5 @@ print(human.temperature)
 
 #get the fahrenheit method
 print(human.to_fahrenheit())
+
+print(human.__dict__)
