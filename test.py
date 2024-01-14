@@ -7,10 +7,10 @@ class Celsius:
         return (self.temperature * 1.8) + 32
 
 #create a new object 
-human = Celsius()
+human = Celsius(37)
 
 #set the temperature
-human.temperature = 37
+# human.temperature = 37
 
 #Get the teamperature attribute
 print(human.temperature)
