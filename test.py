@@ -1,14 +1,14 @@
 #Python @property decorators
 class Celsius:
     def __init__(self, temperature = 0):
-        self.temperature = temperature
+        self.set_temperature(temperature)
 
     def to_fahrenheit(self):
-        return (self.temperature * 1.8) + 32
+        return (self.get_temperature() * 1.8) + 32
     
     #getter method
     def get_temperature(self):
-        return self._temperature
+        return self._temperature #underscore at the beginning is used to denote private variables
     
     #setter method
     def set_temperature(self, value):
@@ -23,9 +23,12 @@ human = Celsius(37)
 # human.temperature = 37
 
 #Get the teamperature attribute
-print(human.temperature)
+print(human.get_temperature())
 
 #get the fahrenheit method
 print(human.to_fahrenheit())
+
+#constraint test
+print(human.set_temperature(-300))
 
 print(human.__dict__)
