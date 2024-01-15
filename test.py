@@ -5,6 +5,16 @@ class Celsius:
 
     def to_fahrenheit(self):
         return (self.temperature * 1.8) + 32
+    
+    #getter method
+    def get_temperature(self):
+        return self._temperature
+    
+    #setter method
+    def set_temperature(self, value):
+        if value < -273.15:
+            raise ValueError("Temperature below -273.15 is not possible")
+        self._temperature = value
 
 #create a new object 
 human = Celsius(37)
