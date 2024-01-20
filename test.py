@@ -20,3 +20,11 @@ class Celsius:
 
     #create a property object
     temperature = property(get_temperature, set_temperature)
+
+human = Celsius(37)
+
+print(human.temperature)
+
+print(human.to_fahrenheit())
+
+human.temperature = -300
