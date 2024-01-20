@@ -20,4 +20,7 @@ class Celsius:
         self._temperature = value
 
 #create an object
-
+human = Celsius(37)
+print(human.temperature)
+print(human.to_fahrenheit())
+coldest_thing = Celsius(-300)
