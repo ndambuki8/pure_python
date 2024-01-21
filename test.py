@@ -1,26 +1,12 @@
-#Using @property decorator
-class Celsius:
+#RegEx 
+#- A regular expression is a sequence of characters that defines a search apptern
+#eg. !a....s$
+import re
+pattern = '^a...s$'
+test_string = 'abyss'
+result = re.match(pattern, test_string)
 
-    def __init__(self, temperature=0):
-        self.temperature = temperature
-
-    def to_fahrenheit(self):
-        return (self.temperature * 1.8) + 32
-    
-    @property
-    def temperature(self):
-        print("Getting value...")
-        return self._temperature 
-    
-    @temperature.setter
-    def temperature(self, value):
-        print("Setting value...")
-        if value < -273.15:
-            raise ValueError("Temperature below -273 not possible")
-        self._temperature = value
-
-#create an object
-human = Celsius(37)
-print(human.temperature)
-print(human.to_fahrenheit())
-coldest_thing = Celsius(-300)
+if result:
+    print("Search successful")
+else:
+    print("Search unsuccessful")
