@@ -1,12 +1,11 @@
 #RegEx 
-#- A regular expression is a sequence of characters that defines a search apptern
-#eg. !a....s$
+#- Extracting numbers from a string
 import re
-pattern = '^a...s$'
-test_string = 'abyss'
-result = re.match(pattern, test_string)
+pattern = '\d+'
+test_string = 'hello 12 hi 89. hOWDY 34'
+result = re.findall(pattern, test_string)
 
 if result:
-    print("Search successful")
+    print(result)
 else:
     print("Search unsuccessful")
