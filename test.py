@@ -1,9 +1,9 @@
 #RegEx 
-#- Extracting numbers from a string
+#- Extracting numbers from a string - retaining the string using split
 import re
 pattern = '\d+'
-test_string = 'hello 12 hi 89. hOWDY 34'
-result = re.findall(pattern, test_string)
+test_string = 'Twelve : 12 Eighty: 89'
+result = re.split(pattern, test_string, 1)
 
 if result:
     print(result)
