@@ -1,11 +1,15 @@
 #RegEx 
-#- Extracting numbers from a string - retaining the string using split
+#- re.sub()
 import re
-pattern = '\d+'
-test_string = 'Twelve : 12 Eighty: 89'
-result = re.split(pattern, test_string, 1)
 
-if result:
-    print(result)
-else:
-    print("Search unsuccessful")
+
+#multiline string
+string = 'abc 12\
+    de 23 \n f45 6'
+
+pattern = "\s+"
+
+replace = ''
+
+new_string = re.sub(pattern, replace, string)
+print(new_string)
