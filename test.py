@@ -11,5 +11,5 @@ pattern = "\s+"
 
 replace = ''
 
-new_string = re.sub(pattern, replace, string)
+new_string = re.sub(r'\s+', replace, string, 1)
 print(new_string)
