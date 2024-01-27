@@ -1,15 +1,15 @@
 #RegEx 
-#- re.sub()
+#- re.search(patterb, str)
+
 import re
 
+string = 'Python is fin'
 
-#multiline string
-string = 'abc 12\
-    de 23 \n f45 6'
+#check if 'Python' isat the beginning 
+match = re.search('\APython', string)
 
-pattern = "\s+"
+if match:
+    print("pATTERN FOUND INSUDE")
+else:
+    print("Pattern not found")
 
-replace = ''
-
-new_string = re.subn(pattern, replace, string)
-print(new_string)
