@@ -14,5 +14,6 @@ if match:
     print(match.groups())
     print(match.start())
     print(match.end())
+    print(match.span())
 else:
     print("Pattern not found")
