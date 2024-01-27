@@ -12,5 +12,7 @@ match = re.search(pattern, string)
 
 if match:
     print(match.groups())
+    print(match.start())
+    print(match.end())
 else:
     print("Pattern not found")
