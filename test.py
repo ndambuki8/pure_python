@@ -1,7 +1,9 @@
-import re
-#Raw string using r prefix
+#using the time module
+import time
 
-string = '\n and \r are escape sequences'
+start = time.time()
+print(23*2.3)
 
-result = re.findall(r'[\n\r]', string)
-print(result)
+end = time.time()
+
+print(end - start)
