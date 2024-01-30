@@ -1,9 +1,9 @@
-#using the time module
-import time
+#using the timeit module
+from timeit import default_timer as timer 
+start = timer()
 
-start = time.time()
 print(23*2.3)
 
-end = time.time()
+end = timer()
 
-print(end - start)
+print(end-start)
