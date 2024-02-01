@@ -1,9 +1,16 @@
-#using the timeit module
-from timeit import default_timer as timer 
-start = timer()
+#using the enum module
+from enum import Enum
 
-print(23*2.3)
+class Day(Enum):
+    MONDAY = 1
+    TUESDAY = 2
+    WEDNESDAY = 3
 
-end = timer()
+#print the enum member
+print(Day.MONDAY)
 
-print(end-start)
+#get the name ofthe enum member 
+print(Day.MONDAY.name)
+
+#get the value of the enum member
+print(Day.MONDAY.value)
