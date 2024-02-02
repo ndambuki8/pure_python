@@ -1,16 +1,14 @@
-#using the enum module
-from enum import Enum
+#countdown time in python
+import time 
 
-class Day(Enum):
-    MONDAY = 1
-    TUESDAY = 2
-    WEDNESDAY = 3
+def countdown(time_sec):
+    while time_sec:
+        mins, secs = divmod(time_sec, 60)
+        timeformat = '{:02d}:{:02d}'.format(mins, secs)
+        print(timeformat, end='\r')
+        time.sleep(1)
+        time_sec -= 1
 
-#print the enum member
-print(Day.MONDAY)
+    print("STOP")
 
-#get the name ofthe enum member 
-print(Day.MONDAY.name)
-
-#get the value of the enum member
-print(Day.MONDAY.value)
+countdown(6)
