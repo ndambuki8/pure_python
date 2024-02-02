@@ -1,14 +1,3 @@
-#countdown time in python
-import time 
+#convert bytes to a string
 
-def countdown(time_sec):
-    while time_sec:
-        mins, secs = divmod(time_sec, 60)
-        timeformat = '{:02d}:{:02d}'.format(mins, secs)
-        print(timeformat, end='\r')
-        time.sleep(1)
-        time_sec -= 1
-
-    print("STOP")
-
-countdown(6)
+print(b'Easy \xE2\x9C\x85'.decode("utf-8"))
