@@ -1,3 +1,8 @@
-#convert bytes to a string
+#getting the class name of an instance
 
-print(b'Easy \xE2\x9C\x85'.decode("utf-8"))
+class Vehicle:
+    def name(self, name):
+        return name
+    
+v = Vehicle()
+print(v.__class__.__name__)
