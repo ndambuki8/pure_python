@@ -1,18 +1,9 @@
-#difference between type() and instance()
+#Python program to Display Powers of 2 using Anonymous function
 
-class Polygon:
-    def sides_no(self):
-        pass
+terms = 10
 
-class Triangle(Polygon):
-    def area(self):
-        pass
+result = list(map(lambda x: 2 ** x, range(terms)))
+print(terms)
 
-obj1 = Polygon()
-obj2 = Triangle()
-
-print(type(obj2) == Triangle)
-print(type(obj2) == Polygon)
-
-print(isinstance(obj1,Polygon))
-print(isinstance(obj2, Polygon))
+for i in range(terms):
+    print("2 power", i, "is", result[i])
