@@ -1,20 +1,35 @@
-def findPermutations(nums, target):
-    #create an array to store the solution of the subproblems
-    T = [0] * (target + 1)
-    # there is only one way to reach the target of 0 - dont consider any element
-    T[0] = 1
-    #fill T[] in bottom-up manner
-    for i in range(1, len(T)):
-        for k in nums:
-            if i - k >= 0:
-                T[i] += T[i - k]
+# Stack implementation in python
 
+# 3 creating a stack
+
+def create_stack():
+    stack = []
+
+    return stack
+
+#creating an empty stack
+def check_empty(stack):
+    return len(stack) == 0
+
+#adding items on to the stack 
+def push(stack, item):
+    stack.append(item)
+    print("pushed item " + item)
+
+#removing an element
+def pop(stack):
+    if (check_empty(stack)):
+        return "stack is empty"
     
-    #last element of T[] stores the result
-    return T[target]
+    return stack.pop()
 
-if __name__ == '__main__':
-    nums = [1,2,3]
-    target = 4
+stack = create_stack()
+push(stack, str(1))
+push(stack, str(2))
+push(stack, str(3))
+push(stack, str(4))
 
-    print(findPermutations(nums, target))
+print(stack)
+
+print("popped", pop(stack))
+print("stack after pop", str(stack))
