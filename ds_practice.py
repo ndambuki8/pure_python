@@ -1,35 +1,16 @@
-# Stack implementation in python
+class Solution:
+    def twoSum(self, nums, target):
+        n = len(nums)
+        for i in range(n-1):
+            for j in range(i + 1, n):
+                if nums[i] + nums[j] == target:
+                    return [i, j]
+        return []
 
-# 3 creating a stack
+nums = [3,2,4]
+target = 6
+sol = Solution()
 
-def create_stack():
-    stack = []
+sol = sol.twoSum(nums, target)
 
-    return stack
-
-#creating an empty stack
-def check_empty(stack):
-    return len(stack) == 0
-
-#adding items on to the stack 
-def push(stack, item):
-    stack.append(item)
-    print("pushed item " + item)
-
-#removing an element
-def pop(stack):
-    if (check_empty(stack)):
-        return "stack is empty"
-    
-    return stack.pop()
-
-stack = create_stack()
-push(stack, str(1))
-push(stack, str(2))
-push(stack, str(3))
-push(stack, str(4))
-
-print(stack)
-
-print("popped", pop(stack))
-print("stack after pop", str(stack))
+print(sol)
