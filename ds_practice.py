@@ -1,24 +1,36 @@
-class Solution:
-    def twoSum(self, nums, target):
-        numMap = {}
-        n = len(nums)
+from collections import deque
 
-        #Build the hash table
-        for i in range(n):
-            numMap[nums[i]] = i
+# BFS Implementation
+def bfs(graph, start):
+    visited = set()
+    queue = deque([start])
+    while queue:
+        node = queue.popleft()
+        if node not in visited:
+            print(node, end=" ")
+            visited.add(node)
+            queue.extend(graph[node])
 
-        #Find the complement
-        for i in range(n):
-            complement = target - nums[i]
-            if complement in numMap and numMap[complement] != i:
-                return [i, numMap[complement]]
+# DFS Implementation
+def dfs(graph, node, visited=None):
+    if visited is None:
+        visited = set()
+    if node not in visited:
+        print(node, end=" ")
+        visited.add(node)
+        for neighbor in graph[node]:
+            dfs(graph, neighbor, visited)
 
-        return[]
-
-nums = [3,2,4]
-target = 6
-sol = Solution()
-
-sol = sol.twoSum(nums, target)
-
-print(sol)
+# Test Graph
+graph = {
+    0: [1, 2],
+    1: [0, 3, 4],
+    2: [0, 5],
+    3: [1],
+    4: [1],
+    5: [2]
+}
+print("BFS Traversal:")
+bfs(graph, 0)
+print("\nDFS Traversal:")
+dfs(graph, 0)
