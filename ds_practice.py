@@ -34,3 +34,18 @@ print("BFS Traversal:")
 bfs(graph, 0)
 print("\nDFS Traversal:")
 dfs(graph, 0)
+
+
+
+
+
+def inorder_traversal(root):
+    res, stack = [], []
+    while root or stack:
+        while root:
+            stack.append(root)
+            root = root.left
+        root = stack.pop()
+        res.append(root.val)
+        root = root.right
+    return res
