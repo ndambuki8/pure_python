@@ -1,16 +1,32 @@
-student = ["Jack", 32, 'Computer Science', [2,4]]
+# creating a dictionary
+country_capitals = {
+    "Germany": "Berlin",
+    "Canada" : "Ottawa",
+    "England" : "London",
+    254: "Kenya"
+}
 
-student.append(77)
-student.insert(3, "Buda")
-student[3] = "Jabaaa"
-student.remove(77)
+country_capitals[255] = "Uganda"
 
-del student[0]
-del student[1:4]
+# del country_capitals[254]
+country_capitals.pop(254)
+country_capitals[254] = "Tz"
+# print(country_capitals)
+# print(country_capitals["Canada"])
+# print(country_capitals["England"])
+# print(country_capitals.get(254))
 
-more = ["Jane", 45, "loves cooking", [24,8]]
+# print(len(country_capitals))
 
-student.extend(more)
-print(student)
-# print(student[-5])
-# print(student[0])
+# print a dictionary keys one by one
+# print("Keys:")
+# for country in country_capitals:
+#     print(country)
+
+# print("\nValues:")
+
+# for country in country_capitals:
+#     print(country_capitals.get(country))
+
+for values in country_capitals.values():
+    print(values)
