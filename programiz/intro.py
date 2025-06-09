@@ -1,32 +1,33 @@
-# creating a dictionary
-country_capitals = {
-    "Germany": "Berlin",
-    "Canada" : "Ottawa",
-    "England" : "London",
-    254: "Kenya"
-}
+# Python list comprehension
+# - makes it easy to create a new list based on the values of an existing list.
 
-country_capitals[255] = "Uganda"
+numbers = [1,2,3,4,5,6]
 
-# del country_capitals[254]
-country_capitals.pop(254)
-country_capitals[254] = "Tz"
-# print(country_capitals)
-# print(country_capitals["Canada"])
-# print(country_capitals["England"])
-# print(country_capitals.get(254))
+#syntax of list comprehension
+# [expression for item in list if condition == True]
 
-# print(len(country_capitals))
 
-# print a dictionary keys one by one
-# print("Keys:")
-# for country in country_capitals:
-#     print(country)
+# list comprehension to crate a new list 
+doubled_numbers = [num * 2 for num in numbers]
 
-# print("\nValues:")
+print(doubled_numbers)
 
-# for country in country_capitals:
-#     print(country_capitals.get(country))
+even_numbers = [num for num in range(1, 10) if num % 2 == 0]
 
-for values in country_capitals.values():
-    print(values)
+print(even_numbers)
+
+even_odd_list = ["Even" if i % 2 == 0 else "Odd" for i in numbers]
+
+print(even_odd_list)
+
+num_list = [y for y in range(100) if y % 2 == 0 if y % 5 == 0]
+
+print(num_list)
+
+word = "Python"
+vowels = "aeiou"
+
+# find vowel in the string "Python"
+result = [char for char in word if char in vowels]
+
+print(result)
