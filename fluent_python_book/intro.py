@@ -1,7 +1,18 @@
-def longest_value(d: dict):
-    # using max and key len to get the longest value
-    longest = max(d.values(), key=len)
-    return longest
+import timeit
 
-fruits = {'fruit':'apple', 'color':'green'}
-print(longest_value(fruits))
+TIMES = 10000
+
+SETUP = """
+symbols = '$¢£¥€¤'
+def non_ascii(c):
+    return c > 127
+"""
+
+def clock(label, cmd):
+    res = timeit.repeat(cmd, setup=SETUP, number=TIMES)
+    print(label, *(f'{x:.3f}' for x in res))
+
+clock('listcomp        :', '[ord(s) for s in symbols if ord(s) > 127]')
+clock('listcomp + func :', '[ord(s) for s in symbols if non_ascii(ord(s))]')
+clock('filter + lambda :', 'list(filter(lambda c: c > 127, map(ord, symbols)))')
+clock('filter + func   :', 'list(filter(non_ascii, map(ord, symbols)))')
