@@ -1,5 +1,11 @@
-def all_the_same(a):
-    a = all(i == a[0] for i in a)
-    return a
+str1 = "the love is real"
 
-print(all_the_same(["Mary", "Mary", "Mary"]))
+def read_backwards(n: str) -> str:
+    # create an empty list
+    x = []
+    for i in n.split() [::-1]: # using split to split string on whitespaces
+        x.append(i)
+    # using the join method to join string
+    return ' '.join(x)
+
+print(read_backwards(str1))
